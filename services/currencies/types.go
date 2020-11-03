@@ -3,7 +3,7 @@ package currencies
 import "models"
 
 type IRemoteDataProvider interface {
-	GetCurrencyRate(code string) models.CurrencyRate
+	GetCurrencyRate(code string) models.CurrencyRate, err
 }
 
 type ICacheDataProvider interface {
