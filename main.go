@@ -1,10 +1,11 @@
 package main
 
 import (
-	"./controllers"
 	"fmt"
-	"github.com/gorilla/mux"
 	"net/http"
+
+	"example.com/crypto/controllers"
+	"github.com/gorilla/mux"
 )
 
 func main() {
@@ -15,5 +16,5 @@ func main() {
 
 	// TODO move port to env
 	fmt.Println("CryptoService server is listening on 8181")
-    http.ListenAndServe(":8181", nil)
+	http.ListenAndServe(":8181", nil)
 }

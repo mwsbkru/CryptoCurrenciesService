@@ -3,13 +3,14 @@ package currencies
 import "models"
 
 type IRemoteDataProvider interface {
-	GetCurrencyRate(code string) models.CurrencyRate, err
+	GetCurrencyRate(code string) models.CurrencyRate, error
 }
 
 type ICacheDataProvider interface {
-	GetCachedCurrency(code string) models.CurrencyRate
+	GetCachedCurrency(code string) models.CurrencyRate, error
 	StoreCurrency(code string, currencyRate models.CurrencyRate) error
 	GetStoredCurrencies() []models.CurrencyRate
+	SetCacheValidator(validator ICacheDataValidator)
 }
 
 type ICacheDataValidator interface {
